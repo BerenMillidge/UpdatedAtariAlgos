@@ -25,3 +25,4 @@ rewards = []
   push!(rewards, r)
   plot(plot(game), sticks(rewards,yticks=nothing),  layout=@layout [a;b{0.2h}])
 end
+'''
