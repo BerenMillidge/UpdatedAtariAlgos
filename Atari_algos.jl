@@ -1,15 +1,8 @@
-# aim is to allow this to actually use atari algos here and be able to display them using julia
-# and wrap them in the standard environment for reinforcement learning... i.e. copying what the guy did for atari algos...
-# but brought up to date!
-
 import ArcadeLearningEnvironment
 const ALE = ArcadeLearningEnvironment
 
-using Plots
-using Reinforce
 
 rom_directory() = joinpath(dirname(@__FILE__), "..", "deps", "rom_files")
-rom_directory()
 # -----------------------------------------------
 
 abstract type AbstractEnvironment end
@@ -45,9 +38,7 @@ mutable struct AtariEnv <: AbstractEnvironment
         println("w: $w, h: $h")
         #rawscreen = Array{Cuchar, w * h * 3}
         rawscreen = zeros(UInt8, w*h*3)
-        println("rawscreen: $(typeof(rawscreen)) $(size(rawscreen))")
         state = zeros(Float64, w*h*3)
-        println("state: $(typeof(state))")
         screen = fill(RGB{Float64}(0,0,0), h, w)
         new(ale, 0, false, 0., 0., 0, w, h, rawscreen, state, screen)
     end
