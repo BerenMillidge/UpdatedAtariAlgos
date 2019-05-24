@@ -2,13 +2,13 @@
 Fork of the excellent AtariAlgos by Tom Breloff, updated to work with Julia 1.0. Also removes the dependency on the Reinforce framework.
 
 Setup:
-''' julia
+```julia
 Pkg.clone("https://github.com/Bmillidgework/UpdatedAtariAlgos.jl")
-'''
+```
 
 You can use plots to plot a game also!
 ### Example
-'''julia
+```julia
 using UpdatedAtariAlgos
 using Plots
 using StatsBase
@@ -25,4 +25,4 @@ rewards = []
   push!(rewards, r)
   plot(plot(game), sticks(rewards,yticks=nothing),  layout=@layout [a;b{0.2h}])
 end
-'''
+```
